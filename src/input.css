@@ -2,17 +2,102 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer components {
-/* TAB */
-.tab {
-    @apply bg-light__green flex text-center justify-center p-10
+  /* TAB */
+  .tab {
+    @apply bg-light__green justify-center;
+  }
+  .tab h1 {
+    @apply font-bold text-[1.5rem] pb-3;
+  }
+  .tab ul {
+    @apply flex flex-wrap gap-5 justify-center pt-6;
+  }
+  .tab__info h1 {
+    @apply text-center;
+  }
+  /* JS */
+  /* .tab__content {
+    @apply hidden flex-row items-center justify-center bg-dark__green
 }
-.tab h1 {
-    @apply font-bold text-[1.5rem] pb-3
-}
-.tab ul {
-    @apply flex flex-wrap gap-5 justify-center pt-6
+.tab__content.active {
+    @apply flex flex-row ease-in-out duration-1000 
 }
 
+.tab__info ul li {
+    @apply py-5 px-[1.4rem] border-b-4 border-transparent flex items-center
+}
+.tab__info ul li.active {   
+    @apply border-green ease-in-out duration-1000
+} */
+  /* JS */
+  .tab__content img {
+    @apply w-[25rem];
+  }
+  .tab__content h3 {
+    @apply font-bold text-[1.5rem];
+  }
+  .coffee__text {
+    @apply w-[21rem];
+  }
+  .coffee__text h3 {
+    @apply pb-3;
+  }
+
+  .tab__product {
+    @apply items-center justify-center  bg-dark__green;
+  }
+}
+
+/* JS-Testing */
+/* -------------------------------------------------------------------------------- */
+.tab__content {
+  @apply absolute opacity-0 translate-x-[35rem] flex-row items-center justify-center;
+}
+.tab__content.active {
+  @apply z-50 opacity-100 flex flex-row ease-in-out duration-700;
+}
+.tab__product {
+  @apply flex-row items-center justify-center pb-[15rem];
+}
+/* .tab__content .star-2-content {
+    @apply hidden
+} */
+.tab__info ul li {
+  @apply py-5 px-[1.4rem] border-b-4 border-transparent flex items-center;
+}
+.tab__info ul li.active {
+  @apply border-green ease-in-out duration-700;
+}
+/* -------------------------------------------------------------------------------- */
+/* accordion */
+.accordion {
+  @apply py-20;
+}
+
+.accordion__list {
+  @apply flex flex-col gap-16 lg:flex-row;
+}
+
+.accordion__item h4 {
+  @apply text-2xl mb-4 pr-[1rem] cursor-pointer lg:cursor-default;
+}
+
+.accordion__item h4 i {
+  @apply inline-block ease-in duration-300  float-right lg:hidden;
+}
+
+.accordion__item h4 i.open {
+  @apply scale-[1] rotate-180;
+}
+
+.accordion__item ul.open {
+  @apply max-h-[30rem];
+}
+.accordion__item ul {
+  @apply h-auto max-h-0 overflow-hidden lg:overflow-visible
+     ease-in duration-300;
+}
+.accordion__item ul li {
+  @apply mt-7 text-green;
 }

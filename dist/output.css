@@ -16,7 +16,7 @@
   /* 2 */
   border-style: solid;
   /* 2 */
-  border-color: #e5e7eb;
+  border-color: currentColor;
   /* 2 */
 }
 
@@ -534,15 +534,46 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.container {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
 /* TAB */
 
 .tab {
-  display: flex;
   justify-content: center;
   --tw-bg-opacity: 1;
   background-color: rgb(241 248 245 / var(--tw-bg-opacity));
-  padding: 2.5rem;
-  text-align: center;
 }
 
 .tab h1 {
@@ -557,4 +588,181 @@ video {
   justify-content: center;
   gap: 1.25rem;
   padding-top: 1.5rem;
+}
+
+.tab__info h1 {
+  text-align: center;
+}
+
+/* JS */
+
+/* .tab__content {
+    @apply hidden flex-row items-center justify-center bg-dark__green
+}
+.tab__content.active {
+    @apply flex flex-row ease-in-out duration-1000 
+}
+
+.tab__info ul li {
+    @apply py-5 px-[1.4rem] border-b-4 border-transparent flex items-center
+}
+.tab__info ul li.active {   
+    @apply border-green ease-in-out duration-1000
+} */
+
+/* JS */
+
+.tab__content img {
+  width: 25rem;
+}
+
+.tab__content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.coffee__text {
+  width: 21rem;
+}
+
+.coffee__text h3 {
+  padding-bottom: 0.75rem;
+}
+
+.tab__product {
+  align-items: center;
+  justify-content: center;
+  --tw-bg-opacity: 1;
+  background-color: rgb(212 233 226 / var(--tw-bg-opacity));
+}
+
+/* JS-Testing */
+
+/* -------------------------------------------------------------------------------- */
+
+.tab__content {
+  position: absolute;
+  --tw-translate-x: 35rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
+.tab__content.active {
+  z-index: 50;
+  display: flex;
+  flex-direction: row;
+  opacity: 1;
+  transition-duration: 700ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab__product {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 15rem;
+}
+
+/* .tab__content .star-2-content {
+    @apply hidden
+} */
+
+.tab__info ul li {
+  display: flex;
+  align-items: center;
+  border-bottom-width: 4px;
+  border-color: transparent;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
+}
+
+.tab__info ul li.active {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 117 74 / var(--tw-border-opacity));
+  transition-duration: 700ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* -------------------------------------------------------------------------------- */
+
+/* accordion */
+
+.accordion {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.accordion__list {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .accordion__list {
+    flex-direction: row;
+  }
+}
+
+.accordion__item h4 {
+  margin-bottom: 1rem;
+  cursor: pointer;
+  padding-right: 1rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .accordion__item h4 {
+    cursor: default;
+  }
+}
+
+.accordion__item h4 i {
+  float: right;
+  display: inline-block;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+@media (min-width: 1024px) {
+  .accordion__item h4 i {
+    display: none;
+  }
+}
+
+.accordion__item h4 i.open {
+  --tw-rotate: 180deg;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.accordion__item ul.open {
+  max-height: 30rem;
+}
+
+.accordion__item ul {
+  height: auto;
+  max-height: 0px;
+  overflow: hidden;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+@media (min-width: 1024px) {
+  .accordion__item ul {
+    overflow: visible;
+  }
+}
+
+.accordion__item ul li {
+  margin-top: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(0 117 74 / var(--tw-text-opacity));
 }
